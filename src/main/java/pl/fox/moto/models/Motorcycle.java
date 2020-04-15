@@ -3,13 +3,11 @@ package pl.fox.moto.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "motorcycle")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Motorcycle {
 
@@ -17,16 +15,20 @@ public class Motorcycle {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "ownername")
     private String owner_name;
     private String manufacturer;
     private String model;
+
+    @Column(name = "productionyear")
     private Integer productionYear;
     private String size;
     private String registration;
     private Long mileage;
-    private Long purchasePrice;
+    private Long purchaseprice;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @Column(name = "purchasedate")
     private Date purchaseDate;
 
     public Long getId() {
@@ -93,12 +95,12 @@ public class Motorcycle {
         this.mileage = mileage;
     }
 
-    public Long getPurchasePrice() {
-        return purchasePrice;
+    public Long getPurchaseprice() {
+        return purchaseprice;
     }
 
-    public void setPurchasePrice(Long purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public void setPurchasePrice(Long purchaseprice) {
+        this.purchaseprice = purchaseprice;
     }
 
     public Date getPurchaseDate() {
