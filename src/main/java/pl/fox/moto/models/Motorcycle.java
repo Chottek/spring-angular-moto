@@ -2,11 +2,16 @@ package pl.fox.moto.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
+@Data
 @Table(name = "motorcycle")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Motorcycle {
@@ -30,6 +35,8 @@ public class Motorcycle {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "purchasedate")
     private Date purchaseDate;
+
+
 
     public Long getId() {
         return id;
