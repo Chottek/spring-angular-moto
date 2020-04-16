@@ -1,0 +1,20 @@
+tr{
+  background-color: #577cbe;
+}
+
+th{
+  text-decoration: underline;
+}
+
+td{
+  font-weight: bolder;
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  color:white;
+}
+

@@ -32,7 +32,6 @@ export class MotorcycleService {
 
   deleteMotorcycle(id: number){
     const url = '/server/api/v1/motorcycles/' + id;
-    alert('/server/api/v1/motorcycles/' + id);
     return this.http.delete(url).toPromise()
       .then(() => null)
       .catch(this.handleError);

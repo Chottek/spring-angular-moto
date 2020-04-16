@@ -1,5 +1,6 @@
 <div class="container">
-  <form [formGroup]="motorcycleForm" (ngSubmit)="submitRegistration()" novalidate>
+  <form  [formGroup]="motorcycleForm" (ngSubmit)="submitRegistration()" novalidate>
+    <div align="center"><h3>Register Motorcycle</h3></div><br/>
     <div *ngIf="validMessage != ''">
       <h3 class="has-info">{{validMessage}}</h3>
     </div>

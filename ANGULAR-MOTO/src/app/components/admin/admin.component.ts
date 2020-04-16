@@ -25,12 +25,4 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  getMotorcyclesByManu(name: string){
-    this.motorcycleService.getMotorcyclesByManufacturer(name).subscribe(
-      data => { this.motorcycles = data; },
-      err => console.error(err),
-      () => console.log('motorcycles found')
-    );
-  }
-
 }

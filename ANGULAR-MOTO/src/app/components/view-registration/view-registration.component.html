@@ -1,53 +1,53 @@
 <div class="container">
   <div class="row">
-    <a class="btn btn=primary" routerLink="/admin">Back to List</a>
+    <a class="btn btn=primary" routerLink="/list">Back to List</a>
   </div>
 
 
 
   <div align="right">
-    <button class="btn btn=primary" routerLink="/admin" (click)="deleteMotorcycle(motoReg.id)">Delete Registry ID: {{motoReg.id}}</button>
+    <button class="btn btn=primary" routerLink="/list" (click)="deleteMotorcycle(motoReg.id)">Delete Registry ID: {{motoReg.id}}</button>
   </div>
   <div>
     <div class="form-group">
-      <label>Registry ID</label>
-      <div class="form-control">{{motoReg.id}}</div>
+      <label>Registry ID:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.id}}</div>
     </div>
     <div class="form-group">
-      <label>Owner Name</label>
-      <div class="form-control">{{motoReg.owner_name}}</div>
+      <label>Owner Name:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.owner_name}}</div>
     </div>
     <div class="form-group">
-      <label>Manufacturer</label>
-      <div class="form-control">{{motoReg.manufacturer}}</div>
+      <label>Manufacturer:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.manufacturer}}</div>
     </div>
     <div class="form-group">
-      <label>Model</label>
-      <div class="form-control">{{motoReg.model}}</div>
+      <label>Model:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.model}}</div>
     </div>
     <div class="form-group">
-      <label>Year of Production</label>
-      <div class="form-control">{{motoReg.productionYear}}</div>
+      <label>Year of Production:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.productionYear}}</div>
     </div>
     <div class="form-group">
-      <label>Engine Size</label>
-      <div class="form-control">{{motoReg.size}}</div>
+      <label>Engine Size:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.size}}</div>
     </div>
     <div class="form-group">
-      <label>License number</label>
-      <div class="form-control">{{motoReg.registration}}</div>
+      <label>License number:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.registration}}</div>
     </div>
     <div class="form-group">
-      <label>Mileage</label>
-      <div class="form-control">{{motoReg.mileage}}</div>
+      <label>Mileage:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.mileage}}</div>
     </div>
     <div class="form-group">
-      <label>Purchase Price</label>
-      <div class="form-control">{{motoReg.purchaseprice}}</div>
+      <label>Purchase Price:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.purchaseprice}}</div>
     </div>
-    <div class="form-group">
-      <label>Purchase Date</label>
-      <div class="form-control">{{motoReg.purchasedate}}</div>
+    <div class="form-group" >
+      <label>Purchase Date:</label>
+      <div class="btn" style="font-size: 20px; text-decoration: underline">{{motoReg.purchasedate}}</div>
     </div>
   </div>
 </div>
