@@ -1,0 +1,45 @@
+<div class="container">
+  <form [formGroup]="motorcycleForm" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <div class="form-group">
+      <label>Owner Name</label>
+      <input type="text" class="form-control" formControlName="owner_name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Manufacturer</label>
+      <input type="email" class="form-control" formControlName="manufacturer" required/>
+    </div>
+    <div class="form-group">
+      <label>Model</label>
+      <input type="text" class="form-control" formControlName="model" required/>
+    </div>
+    <div class="form-group">
+      <label>Year of production</label>
+      <input type="text" class="form-control" formControlName="productionYear" required/>
+    </div>
+    <div class="form-group">
+      <label>Engine size</label>
+      <input type="text" class="form-control" formControlName="size" required/>
+    </div>
+    <div class="form-group">
+    <label>License plate number</label>
+    <input type="text" class="form-control" formControlName="registration" required/>
+  </div>
+    <div class="form-group">
+      <label>Mileage</label>
+      <input type="text" class="form-control" formControlName="mileage" required/>
+    </div>
+    <div class="form-group">
+      <label>Purchase Price</label>
+      <input type="text" class="form-control" formControlName="purchaseprice" required/>
+    </div>
+    <div class="form-group">
+      <label>Purchase Date</label>
+      <input type="text" class="form-control" formControlName="purchasedate" required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
