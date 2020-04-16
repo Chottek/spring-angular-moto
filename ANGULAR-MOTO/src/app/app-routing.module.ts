@@ -10,11 +10,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'admin/view/:id',
+    path: 'list/view/:id',
     component: ViewRegistrationComponent
   },
   {
-    path: 'admin',
+    path: 'list',
     component: AdminComponent
   }
 ];

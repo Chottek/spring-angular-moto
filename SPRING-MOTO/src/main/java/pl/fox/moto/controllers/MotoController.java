@@ -14,33 +14,47 @@ import java.util.Optional;
 @RequestMapping("/api/v1/motorcycles")
 public class MotoController {
 
-    @Autowired
     private MotorcycleRepository motorcycleRepository;
 
+    @Autowired
+    public MotoController(MotorcycleRepository motorcycleRepository){
+        this.motorcycleRepository = motorcycleRepository;
+    }
+
+
     @GetMapping
-    public List<Motorcycle> list(){
-       return motorcycleRepository.findAll();
+    public List<Motorcycle> list() {
+        return motorcycleRepository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void create(@RequestBody Motorcycle motorcycle){
+    public void create(@RequestBody Motorcycle motorcycle) {
         motorcycleRepository.save(motorcycle);
     }
 
     @GetMapping("/{id}")
-    public Motorcycle get(@PathVariable("id") long id){
+    public Motorcycle get(@PathVariable("id") long id) {
         return motorcycleRepository.getOne(id);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteMotorcycle(@PathVariable("id") Long id){
-        Optional<Motorcycle> motorycle = motorcycleRepository.findById(id);
-        if(motorycle.isPresent()){
-            motorcycleRepository.delete(motorycle.get());
+
+    @GetMapping("/search")
+    public @ResponseBody List<Motorcycle> searchByParam(@RequestParam("by") String by){
+        return motorcycleRepository.findAllByManufacturer(by);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMotorcycle(@PathVariable("id") Long id) {
+        System.out.println("I guess i got an id: "+ id);
+        Optional<Motorcycle> motorcycle = motorcycleRepository.findById(id);
+        if (motorcycle.isPresent()) {
+            System.out.println("I should delete: "+ id);
+            motorcycleRepository.delete(motorcycle.get());
             return ResponseEntity.accepted().build();
-        }else{
+        } else
             return ResponseEntity.notFound().build();
-        }
+
     }
 }

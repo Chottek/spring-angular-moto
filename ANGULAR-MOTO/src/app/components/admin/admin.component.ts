@@ -15,11 +15,21 @@ export class AdminComponent implements OnInit {
     this.getMotorcycles();
   }
 
-  getMotorcycles(){
+  getMotorcycles() {
     this.motorcycleService.getMotorcycles().subscribe(
-      data => { this.motorcycles = data},
-           err => console.error(err),
-          () => console.log('motorcycles loaded')
+      data => {
+        this.motorcycles = data;
+      },
+      err => console.error(err),
+      () => console.log('motorcycles loaded')
+    );
+  }
+
+  getMotorcyclesByManu(name: string){
+    this.motorcycleService.getMotorcyclesByManufacturer(name).subscribe(
+      data => { this.motorcycles = data; },
+      err => console.error(err),
+      () => console.log('motorcycles found')
     );
   }
 

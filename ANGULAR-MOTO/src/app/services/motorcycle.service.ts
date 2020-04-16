@@ -17,6 +17,10 @@ export class MotorcycleService {
     return this.http.get('/server/api/v1/motorcycles');
   }
 
+  getMotorcyclesByManufacturer(name: string){
+    return this.http.get('/server/api/v1/motorcycles/search?by=' + name);
+  }
+
   getMotorcycle(id: number){
      return this.http.get('/server/api/v1/motorcycles/' + id);
   }
@@ -26,6 +30,16 @@ export class MotorcycleService {
      return this.http.post('/server/api/v1/motorcycles', body, httpOptions);
   }
 
+  deleteMotorcycle(id: number){
+    const url = '/server/api/v1/motorcycles/' + id;
+    alert('/server/api/v1/motorcycles/' + id);
+    return this.http.delete(url).toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 
-
+  private handleError(error: any): Promise<any> {
+    console.error('Error', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
 }

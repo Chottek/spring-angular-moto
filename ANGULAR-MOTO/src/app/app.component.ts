@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MotorcycleService } from './services/motorcycle.service';
+import {FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'moto-ui';
+  search: FormGroup;
+
+  constructor(private motorcycleService: MotorcycleService) { }
 }

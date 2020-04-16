@@ -12,7 +12,7 @@
     </tr>
     <tr *ngFor="let moto of motorcycles">
       <td>
-        <a [routerLink]="['/admin/view', moto.id]">{{moto.owner_name}}</a>
+        <a [routerLink]="['/list/view', moto.id]">{{moto.owner_name}}</a>
       </td>
       <td>
         {{moto.manufacturer}}
@@ -32,7 +32,7 @@
       <td>
         {{moto.mileage}}
       </td>
-      <td class="text-right">
+      <td>
         {{moto.purchaseprice}}
       </td>
     </tr>

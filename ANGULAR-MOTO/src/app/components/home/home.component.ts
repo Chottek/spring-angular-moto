@@ -44,10 +44,4 @@ export class HomeComponent implements OnInit {
       this.validMessage = 'Please fill the form before submitting!';
     }
   }
-
-  deleteMotorcycle(){
-    this.validMessage = 'Motorcycle deleted successfuly';
-    this.motorcycleService.deleteMotorcycle(this.motorcycleForm.value).subscribe();
-  }
-
 }

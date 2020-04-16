@@ -1,5 +1,16 @@
-<div style="text-align: center">
+<div style="text-align: center; margin-bottom: 80px;">
   <h1>Motorcycle Registry System</h1>
 </div>
+
+<div align="center">
+  <nav>
+    <ul>
+      <li><a href="/list">List</a></li>
+      <li><a href="">Register Motorcycle</a></li>
+      <li><input type="search" id="searchbar" placeholder="search by name" /><button id="searchbutton" (click)="motorcycleService.getMotorcyclesByManufacturer()">search</button></li>
+    </ul>
+  </nav>
+</div>
+
 
 <router-outlet></router-outlet>

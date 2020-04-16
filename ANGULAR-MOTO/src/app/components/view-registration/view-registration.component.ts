@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MotorcycleService} from '../../services/motorcycle.service';
 import { ActivatedRoute} from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-registration',
@@ -12,7 +11,7 @@ export class ViewRegistrationComponent implements OnInit {
 
   public motoReg;
 
-  constructor(private motorcycleService: MotorcycleService, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private motorcycleService: MotorcycleService, private route: ActivatedRoute) { }
 
   ngOnInit(){
      this.getMotoReg(this.route.snapshot.params.id);
@@ -29,9 +28,7 @@ export class ViewRegistrationComponent implements OnInit {
   }
 
   deleteMotorcycle(id: number){
-    return this.http.delete('/server/api/v1/motorcycles/' + id);
+    return this.motorcycleService.deleteMotorcycle(id);
   }
-
-
 
 }
