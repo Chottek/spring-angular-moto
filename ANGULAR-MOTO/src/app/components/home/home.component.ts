@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   submitRegistration(){
     if (this.motorcycleForm.valid){
-      this.validMessage = "Motorcycle registered successfuly!";
+      this.validMessage = 'Motorcycle registered successfuly!';
       this.motorcycleService.createMotorcycleRegistration(this.motorcycleForm.value).subscribe(
         data => {
           this.motorcycleForm.reset();
@@ -39,10 +39,15 @@ export class HomeComponent implements OnInit {
         error => {
           return Observable.throw(error);
         }
-      )
+      );
     } else {
-      this.validMessage = "Please fill the form before submitting!";
+      this.validMessage = 'Please fill the form before submitting!';
     }
+  }
+
+  deleteMotorcycle(){
+    this.validMessage = 'Motorcycle deleted successfuly';
+    this.motorcycleService.deleteMotorcycle(this.motorcycleForm.value).subscribe();
   }
 
 }
